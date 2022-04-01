@@ -17,7 +17,6 @@ class CharactersCubit extends Cubit<CharactersState> {
     var characterList = await repository.fetchList();
 
     if (characterList != null) {
-      print(state);
       if (state is CharactersLoaded) {
         emit(
           CharactersLoaded(
