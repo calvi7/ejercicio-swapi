@@ -3,5 +3,5 @@ class Strings {
   static const String error = 'No se hallaron datos';
 
   // AppBar
-  static const String appBarTitle = 'Busca un Personaje';
+  static const String appBarTitle = 'Reportar un Personaje';
 }

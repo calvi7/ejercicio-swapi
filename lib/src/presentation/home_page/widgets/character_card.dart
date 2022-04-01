@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:intento_ejercicio1/src/data/models/character_model.dart';
-import 'package:intento_ejercicio1/src/resources/box_decoration.dart';
 import 'package:intento_ejercicio1/src/resources/resources.dart';
 
 class CharacterCard extends StatelessWidget {

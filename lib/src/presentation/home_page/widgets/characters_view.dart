@@ -17,7 +17,11 @@ class CharactersView extends StatelessWidget {
       builder: (context, state) {
         // Is it waiting initial Api Fetch?
         if (state is CharactersLoading) {
-          return const Center(child: CircularProgressIndicator());
+          return const Center(
+            child: CircularProgressIndicator(
+              color: Colors.white,
+            ),
+          );
 
           // Api has been Fetched
         } else if (state is CharactersLoaded) {
