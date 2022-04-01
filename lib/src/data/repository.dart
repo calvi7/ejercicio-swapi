@@ -7,8 +7,8 @@ class Repository {
 
   Repository({required this.networkService});
 
-  Future<List<Character>?> fetchList() async {
-    var rawList = await networkService.fetchList();
+  Future<List<Character>?> fetchList(int page) async {
+    var rawList = await networkService.fetchList(page);
 
     if (rawList != null) {
       CharacterResponse characters = CharacterResponse.fromJson(rawList);

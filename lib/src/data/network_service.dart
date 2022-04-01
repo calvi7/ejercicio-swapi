@@ -4,17 +4,10 @@ import 'package:http/http.dart' as http;
 class NetworkService {
   final String _apiLink = 'swapi.dev';
 
-  int currentPage = 0;
-
-  Future<String?> fetchList() async {
-    currentPage++;
+  Future<String?> fetchList(int page) async {
     var url = Uri.https(_apiLink, '/api/people/', {
-      'page': '$currentPage',
+      'page': '$page',
     });
-
-    if (currentPage == 9) {
-      currentPage = 0;
-    }
 
     try {
       var jsonResponse = await http.get(url);

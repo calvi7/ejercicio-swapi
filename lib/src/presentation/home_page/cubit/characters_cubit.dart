@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:meta/meta.dart';
 
 import 'package:intento_ejercicio1/src/data/models/character_model.dart';
@@ -13,23 +14,23 @@ class CharactersCubit extends Cubit<CharactersState> {
     required this.repository,
   }) : super(CharactersLoading());
 
-  void fetchList() async {
-    var characterList = await repository.fetchList();
+  List<Character> localCharacters = [];
 
-    if (characterList != null) {
-      if (state is CharactersLoaded) {
-        emit(
-          CharactersLoaded(
-            characters: [...characterList],
-          ),
-        );
+  int currentPage = 0;
+
+  void fetchList() async {
+    currentPage++;
+    if (currentPage < 9) {
+      var characterList = await repository.fetchList(currentPage);
+      if (characterList != null) {
+        localCharacters = [
+          ...localCharacters,
+          ...characterList,
+        ];
+        emit(CharactersLoaded(characters: localCharacters));
       } else {
-        emit(CharactersLoaded(
-          characters: characterList,
-        ));
+        emit(CharactersError());
       }
-    } else {
-      emit(CharactersError());
     }
   }
 }
