@@ -14,40 +14,37 @@ class CharactersView extends StatelessWidget {
   Widget build(BuildContext context) {
     BlocProvider.of<CharactersCubit>(context).fetchList();
     return BlocBuilder<CharactersCubit, CharactersState>(
-      builder: (context, state) {
-        // Is it waiting initial Api Fetch?
-        if (state is CharactersLoading) {
-          return const Center(
-            child: CircularProgressIndicator(
-              color: Colors.white,
-            ),
-          );
-
-          // Api has been Fetched
-        } else if (state is CharactersLoaded) {
-          final characterList = state.characters;
-
-          return Card(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
-            margin: EdgeInsets.zero,
-            color: Colors.indigoAccent,
-            child: ListView.builder(
-              padding: const EdgeInsets.symmetric(vertical: 20),
-              itemCount: characterList.length,
-              itemBuilder: ((context, index) => CharacterCard(
-                    character: characterList[index],
-                  )),
-            ),
-          );
-        } else {
-          // Error
-          return Column(
-            children: const [Text(Strings.error)],
-          );
-        }
-      },
-    );
+        builder: (context, state) {
+      // Is it waiting initial Api Fetch?
+      return (state is CharactersLoading)
+          ? const Center(
+              child: CircularProgressIndicator(
+                color: Colors.white,
+              ),
+            )
+          : (state is CharactersLoaded)
+              ? Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  margin: EdgeInsets.zero,
+                  color: Colors.indigoAccent,
+                  child: ListView.separated(
+                    separatorBuilder: (context, index) =>
+                        const SizedBox(height: 10),
+                    itemCount: state.characters.length,
+                    itemBuilder: (context, index) {
+                      return CharacterCard(
+                        character: state.characters[index],
+                      );
+                    },
+                  ),
+                )
+              : (state is CharactersError)
+                  ? Column(
+                      children: const [Text(Strings.error)],
+                    )
+                  : Container();
+    });
   }
 }
