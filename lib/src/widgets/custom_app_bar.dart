@@ -4,9 +4,9 @@ import 'package:intento_ejercicio1/src/resources/resources.dart';
 class CustomAppBar {
   final CustomTextStyles _customTextStyles = CustomTextStyles();
 
-  PreferredSizeWidget appBar() => AppBar(
+  PreferredSizeWidget appBar({required String title}) => AppBar(
         title: Text(
-          'Hola',
+          title,
           style: _customTextStyles.appBarTextStyle,
         ),
         elevation: 0,

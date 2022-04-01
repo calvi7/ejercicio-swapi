@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'presentation/details_page/details_page.dart';
 import 'presentation/home_page/home_page.dart';
 
 class MyApp extends StatelessWidget {
@@ -7,11 +8,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Star Wars Threat Reporter',
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
-      home: HomePage(),
+      initialRoute: 'home',
+      routes: {
+        'home': (context) => HomePage(),
+        'details': (context) => DetailsPage(),
+      },
     );
   }
 }

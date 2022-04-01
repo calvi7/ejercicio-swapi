@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:intento_ejercicio1/src/data/models/character_model.dart';
+import 'package:intento_ejercicio1/src/resources/box_decoration.dart';
+import 'package:intento_ejercicio1/src/resources/resources.dart';
 
 class CharacterCard extends StatelessWidget {
   final Character character;
@@ -13,6 +15,7 @@ class CharacterCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+
     return GestureDetector(
       onTap: () {},
       child: Container(
@@ -21,16 +24,7 @@ class CharacterCard extends StatelessWidget {
           horizontal: 10,
           vertical: 20,
         ),
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
-            gradient: const LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomLeft,
-              colors: [
-                Colors.blue,
-                Colors.green,
-              ],
-            )),
+        decoration: BoxStyles().characterCard,
         child: ConstrainedBox(
           // Character's name
           constraints: BoxConstraints(

@@ -15,20 +15,17 @@ class HomePage extends StatelessWidget {
 
   final BoxStyles boxStyles = BoxStyles();
   final CustomAppBar customAppBar = CustomAppBar();
-
   @override
   Widget build(BuildContext context) {
     final NetworkService networkService = NetworkService();
     final Repository repository = Repository(networkService: networkService);
 
     return Scaffold(
-      appBar: customAppBar.appBar(),
+      appBar: customAppBar.appBar(title: Strings.appBarTitle),
       body: BlocProvider(
         create: (context) => CharactersCubit(repository: repository),
         child: Container(
-          margin: const EdgeInsets.only(
-            top: 30,
-          ),
+          margin: const EdgeInsets.only(top: 30),
           decoration: boxStyles.cardContainer,
           child: CharactersView(),
         ),
