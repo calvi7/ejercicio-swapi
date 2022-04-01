@@ -16,11 +16,22 @@ class CharactersView extends StatelessWidget {
         } else if (state is CharactersLoaded) {
           final characterList = state.characters;
 
-          return ListView.builder(
-            itemCount: characterList.length,
-            itemBuilder: ((context, index) =>
-                CharacterCard(character: characterList[index])),
-          );
+          return SingleChildScrollView(
+              child: Column(
+            children: [
+              const SizedBox(height: 10),
+              ListView.builder(
+                shrinkWrap: true,
+                itemCount: characterList.length,
+                itemBuilder: ((context, index) => Column(
+                      children: [
+                        CharacterCard(character: characterList[index]),
+                        const SizedBox(height: 10),
+                      ],
+                    )),
+              ),
+            ],
+          ));
         } else {
           return Container(color: Colors.red);
         }

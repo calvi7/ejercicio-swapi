@@ -12,6 +12,7 @@ class Repository {
 
     if (rawList != null) {
       CharacterResponse characters = CharacterResponse.fromJson(rawList);
+
       return characters.results;
     }
     return null;

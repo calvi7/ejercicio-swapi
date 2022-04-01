@@ -10,14 +10,14 @@ import 'character_model.dart';
 
 class CharacterResponse {
   CharacterResponse({
-    required this.count,
-    required this.next,
+    this.count,
+    this.next,
     required this.previous,
     required this.results,
   });
 
-  int count;
-  String next;
+  int? count;
+  String? next;
   dynamic previous;
   List<Character> results;
 
