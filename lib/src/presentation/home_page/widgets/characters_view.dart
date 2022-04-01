@@ -27,16 +27,19 @@ class CharactersView extends StatelessWidget {
         } else if (state is CharactersLoaded) {
           final characterList = state.characters;
 
-          return ListView.builder(
-            padding: const EdgeInsets.symmetric(vertical: 20),
-            shrinkWrap: true,
-            itemCount: characterList.length,
-            itemBuilder: ((context, index) => Column(
-                  children: [
-                    CharacterCard(character: characterList[index]),
-                    const SizedBox(height: 10),
-                  ],
-                )),
+          return Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
+            margin: EdgeInsets.zero,
+            color: Colors.indigoAccent,
+            child: ListView.builder(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              itemCount: characterList.length,
+              itemBuilder: ((context, index) => CharacterCard(
+                    character: characterList[index],
+                  )),
+            ),
           );
         } else {
           // Error

@@ -26,12 +26,7 @@ class HomePage extends StatelessWidget {
       appBar: customAppBar.appBar(title: Strings.appBarTitle),
       body: BlocProvider(
         create: (context) => CharactersCubit(repository: repository),
-        child: Container(
-          height: size.height,
-          margin: const EdgeInsets.only(top: 30),
-          decoration: boxStyles.cardContainer,
-          child: CharactersView(),
-        ),
+        child: CharactersView(),
       ),
     );
   }
