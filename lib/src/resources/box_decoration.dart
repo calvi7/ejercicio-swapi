@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'resources.dart';
 
-class BoxStyles {
+class CustomBoxStyles {
+  static final _boxShadows = CustomBoxShadows();
+
   BoxDecoration cardContainer = const BoxDecoration(
     color: Colors.indigo,
     borderRadius: BorderRadius.only(
@@ -12,5 +15,6 @@ class BoxStyles {
   BoxDecoration characterCard = BoxDecoration(
     borderRadius: BorderRadius.circular(24),
     color: const Color.fromARGB(255, 26, 32, 38),
+    boxShadow: [_boxShadows.cardBoxShadow],
   );
 }

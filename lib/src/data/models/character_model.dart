@@ -86,9 +86,10 @@ class Character {
 
   String get formattedHeight {
     try {
-      var formatted = int.parse(height) / 100;
+      double formatted = (double.parse(height) / 100);
       return "$formatted M";
     } catch (e) {
+      // El valor no se puede parsear a int
       return "unkown";
     }
   }

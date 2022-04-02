@@ -8,7 +8,7 @@ import 'package:intento_ejercicio1/src/resources/resources.dart';
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
 
-  final BoxStyles boxStyles = BoxStyles();
+  final CustomBoxStyles boxStyles = CustomBoxStyles();
   final customAppBar = CustomAppBar();
   @override
   Widget build(BuildContext context) {
