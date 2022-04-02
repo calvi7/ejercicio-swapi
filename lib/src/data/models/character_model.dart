@@ -78,8 +78,23 @@ class Character {
   List<String> films;
 
   int get id {
+    // EL id de un personaje va a ser su link en la api en la division
+    // de personajes
     var _id = url.split('/');
     return int.parse(_id[_id.length - 2]);
+  }
+
+  String get formattedHeight {
+    try {
+      var formatted = int.parse(height) / 100;
+      return "$formatted M";
+    } catch (e) {
+      return "unkown";
+    }
+  }
+
+  String get formattedMass {
+    return mass == "unknown" ? mass : "$mass kg";
   }
 
   factory Character.fromJson(String str) => Character.fromMap(json.decode(str));

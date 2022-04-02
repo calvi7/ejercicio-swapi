@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
 
   final BoxStyles boxStyles = BoxStyles();
-  final CustomAppBar customAppBar = CustomAppBar();
+  final customAppBar = CustomAppBar();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
