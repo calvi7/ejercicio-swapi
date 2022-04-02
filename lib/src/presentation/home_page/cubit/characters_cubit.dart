@@ -27,7 +27,7 @@ class CharactersCubit extends Cubit<CharactersState> {
           ...localCharacters,
           ...characterList,
         ];
-        emit(CharactersLoaded(characters: localCharacters));
+        emit(CharactersLoaded(characters: localCharacters, page: currentPage));
       } else {
         emit(CharactersError());
       }

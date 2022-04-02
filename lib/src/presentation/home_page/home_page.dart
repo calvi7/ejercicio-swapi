@@ -6,7 +6,7 @@ import 'package:intento_ejercicio1/src/data/repository.dart';
 import 'package:intento_ejercicio1/src/data/network_service.dart';
 
 import 'package:intento_ejercicio1/src/widgets/custom_app_bar.dart';
-import 'widgets/characters_view.dart';
+import 'widgets/characters_state_view.dart';
 
 import 'package:intento_ejercicio1/src/resources/resources.dart';
 
@@ -20,13 +20,11 @@ class HomePage extends StatelessWidget {
     final NetworkService networkService = NetworkService();
     final Repository repository = Repository(networkService: networkService);
 
-    final size = MediaQuery.of(context).size;
-
     return Scaffold(
       appBar: customAppBar.appBar(title: Strings.appBarTitle),
       body: BlocProvider(
         create: (context) => CharactersCubit(repository: repository),
-        child: CharactersView(),
+        child: CharactersStateView(),
       ),
     );
   }

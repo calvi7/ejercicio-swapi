@@ -17,6 +17,7 @@ class CharacterCard extends StatelessWidget {
 
     return Column(
       children: [
+        const SizedBox(height: 10),
         GestureDetector(
           onTap: () => Navigator.pushNamed(
             context,
@@ -31,8 +32,6 @@ class CharacterCard extends StatelessWidget {
             ),
             decoration: BoxStyles().characterCard,
             child: ConstrainedBox(
-              // Character's name
-
               constraints: BoxConstraints(
                 minWidth: size.width * 0.8,
                 maxWidth: 800,
@@ -49,7 +48,7 @@ class CharacterCard extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
       ],
     );
   }
