@@ -12,7 +12,6 @@ class CustomAppBar {
         iconTheme: theme.appBarTheme.iconTheme,
         title: Text(
           title,
-          style: _customTextStyles.appBarTextStyle,
         ),
         elevation: 0,
         foregroundColor: Colors.transparent,

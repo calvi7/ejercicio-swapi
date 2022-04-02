@@ -11,6 +11,12 @@ class CharacterDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appBarTheme = Theme.of(context).appBarTheme.titleTextStyle;
+    final titleStyle = TextStyle(
+      color: appBarTheme!.color,
+      fontSize: 18,
+      fontWeight: FontWeight.w700,
+    );
     return Column(
       children: [
         ListTile(
@@ -20,7 +26,7 @@ class CharacterDetails extends StatelessWidget {
           ),
           title: Text(
             'Sexo',
-            style: customTextStyles.listTileTitleStyle,
+            style: titleStyle,
           ),
           subtitle: Text(
             character.gender.toUpperCase(),
@@ -34,7 +40,7 @@ class CharacterDetails extends StatelessWidget {
           ),
           title: Text(
             "Color de Piel",
-            style: customTextStyles.listTileTitleStyle,
+            style: titleStyle,
           ),
           subtitle: Text(
             character.skinColor.toUpperCase(),
@@ -48,7 +54,7 @@ class CharacterDetails extends StatelessWidget {
           ),
           title: Text(
             "Color de Pelo",
-            style: customTextStyles.listTileTitleStyle,
+            style: titleStyle,
           ),
           subtitle: Text(
             character.hairColor.toUpperCase(),
@@ -62,7 +68,7 @@ class CharacterDetails extends StatelessWidget {
           ),
           title: Text(
             "Color de Ojos",
-            style: customTextStyles.listTileTitleStyle,
+            style: titleStyle,
           ),
           subtitle: Text(
             character.eyeColor.toUpperCase(),
@@ -76,7 +82,7 @@ class CharacterDetails extends StatelessWidget {
           ),
           title: Text(
             "Altura",
-            style: customTextStyles.listTileTitleStyle,
+            style: titleStyle,
           ),
           subtitle: Text(
             character.formattedHeight.toUpperCase(),
@@ -90,7 +96,7 @@ class CharacterDetails extends StatelessWidget {
           ),
           title: Text(
             "Masa",
-            style: customTextStyles.listTileTitleStyle,
+            style: titleStyle,
           ),
           subtitle: Text(
             character.formattedMass.toUpperCase(),

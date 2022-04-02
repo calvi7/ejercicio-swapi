@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomTextStyles {
-  TextStyle get appBarTextStyle => const TextStyle(
+  TextStyle get appBarLightTextStyle => const TextStyle(
         fontSize: 28,
         color: Colors.black,
       );
