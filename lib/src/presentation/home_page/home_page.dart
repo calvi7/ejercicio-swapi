@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:intento_ejercicio1/src/cubit/characters_cubit.dart';
-import 'package:intento_ejercicio1/src/data/network_service.dart';
-import 'package:intento_ejercicio1/src/data/repository.dart';
-import 'package:intento_ejercicio1/src/presentation/home_page/characters_view.dart';
+
+import 'package:intento_ejercicio1/src/widgets/custom_app_bar.dart';
+import 'widgets/characters_state_view.dart';
+
+import 'package:intento_ejercicio1/src/resources/resources.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
 
+  final BoxStyles boxStyles = BoxStyles();
+  final customAppBar = CustomAppBar();
   @override
   Widget build(BuildContext context) {
-    final NetworkService networkService = NetworkService();
-    final Repository repository = Repository(networkService: networkService);
-
     return Scaffold(
-      appBar: AppBar(),
-      body: BlocProvider(
-        create: (context) => CharactersCubit(repository: repository),
-        child: const CharactersView(),
+      appBar: customAppBar.appBar(
+        title: Strings.appBarTitle,
       ),
+      bottomNavigationBar: const BottomAppBar(
+        child: Text(Strings.appBarTitle),
+      ),
+      body: CharactersStateView(),
     );
   }
 }
