@@ -5,6 +5,9 @@ class CustomAppBar {
   final CustomTextStyles _customTextStyles = CustomTextStyles();
 
   PreferredSizeWidget appBar({required String title}) => AppBar(
+        iconTheme: const IconThemeData(
+          color: Colors.black,
+        ),
         title: Text(
           title,
           style: _customTextStyles.appBarTextStyle,
