@@ -4,10 +4,12 @@ import 'package:intento_ejercicio1/src/resources/resources.dart';
 class CustomAppBar {
   final CustomTextStyles _customTextStyles = CustomTextStyles();
 
-  PreferredSizeWidget appBar({required String title}) => AppBar(
-        iconTheme: const IconThemeData(
-          color: Colors.black,
-        ),
+  PreferredSizeWidget appBar({
+    required title,
+    required ThemeData theme,
+  }) =>
+      AppBar(
+        iconTheme: theme.appBarTheme.iconTheme,
         title: Text(
           title,
           style: _customTextStyles.appBarTextStyle,

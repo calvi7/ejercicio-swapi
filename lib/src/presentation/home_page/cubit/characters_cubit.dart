@@ -35,13 +35,13 @@ class CharactersCubit extends Cubit<CharactersState> {
     }
   }
 
-  void _writeToBox(Character character) {
+  void writeToBox(Character character) {
     // TODO implementar el uso de las cajas
     Box<Character> box = Hive.box(Strings.characterBox);
     box.put(character.id, character);
   }
 
-  Character? _getFromBox(int id) {
+  Character? getFromBox(int id) {
     Box<Character> box = Hive.box<Character>(Strings.characterBox);
     var character = box.get(id);
     return character is Character ? character : null;

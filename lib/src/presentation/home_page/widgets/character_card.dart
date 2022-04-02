@@ -21,12 +21,13 @@ class CharacterCard extends StatelessWidget {
     return Column(
       children: [
         const SizedBox(height: 10),
-        GestureDetector(
+        InkWell(
           onTap: () => Navigator.pushNamed(
             context,
             'details',
             arguments: character,
           ),
+          focusColor: Colors.deepPurple,
           child: Container(
             // Container decoration
             padding: const EdgeInsets.symmetric(
