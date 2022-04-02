@@ -6,4 +6,7 @@ class Strings {
 
   // AppBar
   static const String appBarTitle = 'Reportar un Personaje';
+
+  // Hive Boxes
+  static const String characterBox = 'characterBox';
 }

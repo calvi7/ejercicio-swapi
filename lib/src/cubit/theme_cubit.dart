@@ -5,11 +5,11 @@ import 'package:intento_ejercicio1/src/resources/resources.dart';
 part 'theme_state.dart';
 
 class ThemeCubit extends Cubit<ThemeState> {
-  ThemeCubit() : super(ThemeInitial(theme: theme));
+  ThemeCubit() : super(ThemeInitial(theme: initialTheme));
 
-  static ThemeData theme = ThemeData(
+  static ThemeData initialTheme = ThemeData(
     primaryColor: Colors.indigo,
-    scaffoldBackgroundColor: Colors.indigoAccent,
+    scaffoldBackgroundColor: Colors.white,
     fontFamily: 'Monstserrat',
     appBarTheme: AppBarTheme(
       backgroundColor: Colors.transparent,

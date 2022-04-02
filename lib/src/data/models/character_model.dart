@@ -77,6 +77,11 @@ class Character {
   @HiveField(15)
   List<String> films;
 
+  int get id {
+    var _id = url.split('/');
+    return int.parse(_id[_id.length - 2]);
+  }
+
   factory Character.fromJson(String str) => Character.fromMap(json.decode(str));
 
   factory Character.fromMap(Map<String, dynamic> json) => Character(

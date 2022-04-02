@@ -1,9 +1,17 @@
 part of 'theme_cubit.dart';
 
 @immutable
-abstract class ThemeState {}
+abstract class ThemeState {
+  final ThemeData theme;
+
+  const ThemeState({required this.theme});
+}
 
 class ThemeInitial extends ThemeState {
+  // ignore: overridden_fields, annotate_overrides
   final ThemeData theme;
-  ThemeInitial({required this.theme});
+  const ThemeInitial({required this.theme})
+      : super(
+          theme: theme,
+        );
 }
