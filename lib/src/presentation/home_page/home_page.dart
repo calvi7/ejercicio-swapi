@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
       endDrawer: MyDrawer(),
       appBar: customAppBar.appBar(
         title: Strings.appBarTitle,
-        theme: themeCubit.state.theme,
+        theme: themeCubit.state.themeData,
       ),
       bottomNavigationBar: const BottomAppBar(
         child: Text(Strings.appBarTitle),

@@ -11,11 +11,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ThemeCubit, ThemeState>(
-      builder: (context, state) {
+      builder: (_, state) {
+        print(state.themeData);
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Star Wars Threat Reporter',
-          theme: state.theme,
+          theme: state.themeData,
           initialRoute: 'home',
           routes: {
             'home': (context) => HomePage(),

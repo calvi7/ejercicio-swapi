@@ -27,10 +27,14 @@ class _Switch extends StatelessWidget {
   Widget build(BuildContext context) {
     final themeCubit = BlocProvider.of<ThemeCubit>(context);
 
-    return Switch(
-      value: themeCubit.state.value,
-      onChanged: (passedValue) {
-        themeCubit.switchTheme();
+    return BlocBuilder<ThemeCubit, ThemeState>(
+      builder: (_, state) {
+        return Switch(
+          value: state.value,
+          onChanged: (_) {
+            themeCubit.switchTheme();
+          },
+        );
       },
     );
   }

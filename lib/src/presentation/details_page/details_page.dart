@@ -20,7 +20,7 @@ class DetailsPage extends StatelessWidget {
     return Scaffold(
       appBar: customAppBar.appBar(
         title: character.name,
-        theme: themeCubit.state.theme,
+        theme: themeCubit.state.themeData,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
